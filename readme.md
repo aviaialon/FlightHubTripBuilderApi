@@ -87,3 +87,6 @@ From your terminal, execute the following commands:
 7. `php artisan serve --port 8080`
 
 The service should then be running and ready for use.
+
+### Still to do
+**TESTS**!!! - These should have been done **BEFORE** writing a single line of code, but because of lack of time.. (not making excuses.. just sayin..)
