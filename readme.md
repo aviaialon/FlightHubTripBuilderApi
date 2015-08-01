@@ -8,6 +8,13 @@ A simple RESTFul API built with Laravel to manage trips
 **Example:** `curl -i -X GET <REST SERVICE IP>:8080/airports/list?pretty`<br />
 ___
 
+
+#### List all available trips<br />
+> **GET** `/tripslist`<br />
+**Example:** `curl -i -X GET '<REST SERVICE IP>:8080/trips/list?pretty'<br />
+
+___
+
 #### List all flights associated to a trip:<br />
 > **GET** `/trips/{trip_id}/flights`<br />
 
@@ -15,12 +22,6 @@ ___
 | ------------- | ----------- |
 | `trip_id`      | The trip's id.|
 **Example:** `curl -i -X GET '<REST SERVICE IP>:8080/trips/1/flights?pretty'`<br />
-___
-
-#### List all available trips<br />
-> **GET** `/tripslist`<br />
-**Example:** `curl -i -X GET '<REST SERVICE IP>:8080/trips/list?pretty'<br />
-
 ___
 
 #### Create a new trip<br />
