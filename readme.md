@@ -13,8 +13,14 @@ ___
 
 | Param Name | Description          |
 | ------------- | ----------- |
-| `trip_id`      | is the trip's id.|
-**Example:** `curl -i -X GET <REST SERVICE IP>:8080/trips/1/flights?pretty`<br />
+| `trip_id`      | The trip's id.|
+**Example:** `curl -i -X GET '<REST SERVICE IP>:8080/trips/1/flights?pretty'`<br />
+___
+
+#### List all available trips<br />
+> **GET** `/tripslist`<br />
+**Example:** `curl -i -X GET '<REST SERVICE IP>:8080/trips/list?pretty'<br />
+
 ___
 
 #### Create a new trip<br />
@@ -32,7 +38,7 @@ ___
 
 | Param Name | Description          |
 | ------------- | ----------- |
-| `trip_id`      | is the trip's id.|
+| `trip_id`      | The trip's id.|
 | `name`      | The trip's new name.|
 **Example:** `curl -i -X PUT '<REST SERVICE IP>:8080/trips/1?pretty' -d 'name=My Cool New Name'`<br />
 ___
@@ -42,9 +48,9 @@ ___
 
 | Param Name | Description          |
 | ------------- | ----------- |                                              
-| `trip_id`      | is the trip's id.|
-| `flight_id`      | is the flight id associate to the trip.|
-**Example:** `curl -i -X DELETE <REST SERVICE IP>:8080/trips/1/flights/1?pretty`<br />
+| `trip_id`      | The trip id.|
+| `flight_id`      | The flight id associate to the trip.|
+**Example:** `curl -i -X DELETE '<REST SERVICE IP>:8080/trips/1/flights/1?pretty'`<br />
 ___
 
 #### Add a flight to a trip<br />
@@ -52,10 +58,10 @@ ___
 
 | Param Name | Description          |
 | ------------- | ----------- |
-| `trip_id`      | is the trip's id.|
-| `origin_id`      | is the origin airport id.|
-| `destination_id`      | is the destination airport id.|
-**Example:** `curl -i -X POST <REST SERVICE IP>:8080/trips/1/flights/6/5?pretty`<br />
+| `trip_id`      | The trip's id.|
+| `origin_id`      | The origin airport id.|
+| `destination_id`      | The destination airport id.|
+**Example:** `curl -i -X POST '<REST SERVICE IP>:8080/trips/1/flights/6/5?pretty'`<br />
 ___
 
 #### Delete a trip (and associated flights)<br />
@@ -63,8 +69,8 @@ ___
 
 | Param Name | Description          |
 | ------------- | ----------- |
-| `trip_id`      | is the trip's id.|
-**Example:** `curl -i -X DELETE <REST SERVICE IP>:8080/trips/1?pretty`<br />
+| `trip_id`      | The trip's id.|
+**Example:** `curl -i -X DELETE '<REST SERVICE IP>:8080/trips/1?pretty'`<br />
 
 
 ### Installation

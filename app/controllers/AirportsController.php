@@ -29,5 +29,4 @@ class AirportsController extends BaseController
 	{
 		$this->respond($this->_airportRepo->getAll());
 	}
-
 }

@@ -12,6 +12,7 @@
 */
 
 Route::get('/airports/list', 'AirportsController@all');
+Route::get('/trips/list', 'TripsController@all');
 Route::get('/trips/{id}/flights', 'FlightsController@flights')->where(array('id' => '[0-9]+'));
 Route::post('/trips', 'TripsController@create');
 Route::put('/trips/{id}', 'TripsController@edit')->where(array(

@@ -23,6 +23,14 @@ class TripsController extends BaseController
 	}
 	
 	/**
+	 * List action - lists airports in alphabetical order
+	 */
+	public function all()
+	{
+		$this->respond($this->_tripsRepo->getAll());
+	}
+	
+	/**
 	 * Creates a new trip
 	 * 
 	 * @return void

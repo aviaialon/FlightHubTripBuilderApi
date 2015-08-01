@@ -47,4 +47,14 @@ class Trip
 		
 		return \App\Models\Trip::create(array('name' => $name));
 	}
+	
+	/**
+	 * Gets all the available trips
+	 *
+	 * @return \App\Models\Trip[]
+	 */
+	public function getAll()
+	{
+		return \App\Models\Trip::get(array('*'));
+	}
 }
