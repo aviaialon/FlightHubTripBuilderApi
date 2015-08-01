@@ -72,6 +72,7 @@ class FlightsController extends BaseController
 	{
 		/* @var $trip \App\Models\Trip */
 		$trip = $this->_tripsRepo->getById($tripId);
+		$data = array();
 		
 		if (empty($trip) === true) {
 			$this->respond($data, 400, 'Invalid trip selected');
