@@ -3,25 +3,29 @@ A simple RESTFul API to manage trips
 
 ## RESTful URLs
 ### List all airports (Ordered alphabeticaly by city and name):<br />
-**GET** `/airports/list`<br />
+
+> **GET** `/airports/list`<br />
 **Example:** `curl -i -X GET <REST SERVICE IP>:8080/airports/list?pretty`<br />
 
 ### List all flights associated to a trip:<br />
-**GET** `/trips/{trip_id}/flights`<br />
+> **GET** `/trips/{trip_id}/flights`<br />
+
 | Param Name | Description          |
 | ------------- | ----------- |
 | `trip_id`      | is the trip's id.|
 **Example:** `curl -i -X GET <REST SERVICE IP>:8080/trips/1/flights?pretty`<br />
 
 ### Create a new trip<br />
-**POST** `/trips/{trip_name}`<br />
+> **POST** `/trips/{trip_name}`<br />
+
 | Param Name | Description          |
 | ------------- | ----------- |
 | `trip_name`      | (Optional) The trips name.|
 **Example:** `curl -i -X POST <REST SERVICE IP>:8080/trips/My cool new trip?pretty`<br />
 
 ### Rename a trip<br />
-**PUT** `/trips/{trip_id}/{trip_name}`<br />
+> **PUT** `/trips/{trip_id}/{trip_name}`<br />
+
 | Param Name | Description          |
 | ------------- | ----------- |
 | `trip_id`      | is the trip's id.|
@@ -29,7 +33,8 @@ A simple RESTFul API to manage trips
 **Example:** `curl -i -X PUT <REST SERVICE IP>:8080/trips/1/i want this name?pretty`<br />
 
 ### Delete a flight for a trip<br />
-**DELETE** `/trips/{trip_id}/flight/{flight_id}`<br />
+> **DELETE** `/trips/{trip_id}/flight/{flight_id}`<br />
+
 | Param Name | Description          |
 | ------------- | ----------- |                                              
 | `trip_id`      | is the trip's id.|
@@ -37,7 +42,8 @@ A simple RESTFul API to manage trips
 **Example:** `curl -i -X DELETE <REST SERVICE IP>:8080/trips/1/flight/1?pretty`<br />
 
 ### Add a flight to a trip<br />
-**POST** `/trips/{trip_id}/flights/{origin_id}/{destination_id}`<br />
+> **POST** `/trips/{trip_id}/flights/{origin_id}/{destination_id}`<br />
+
 | Param Name | Description          |
 | ------------- | ----------- |
 | `trip_id`      | is the trip's id.|
@@ -46,7 +52,8 @@ A simple RESTFul API to manage trips
 **Example:** `curl -i -X POST <REST SERVICE IP>:8080/trips/1/flight/6/5?pretty`<br />
 
 ### Delete a trip (and associated flights)<br />
-**DELETE** `/trips/{trip_id}`<br />
+> **DELETE** `/trips/{trip_id}`<br />
+
 | Param Name | Description          |
 | ------------- | ----------- |
 | `trip_id`      | is the trip's id.|
