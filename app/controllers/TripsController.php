@@ -25,12 +25,17 @@ class TripsController extends BaseController
 	/**
 	 * Creates a new trip
 	 * 
-	 * @param  string $tripName (Optional) The trip name
 	 * @return void
 	 */
-	public function create($tripName = null)
+	public function create()
 	{
-		if (preg_match('/[^a-zA-Z\d\s-_]/', $tripName) === 1) {
+		$tripName = Input::get('name');
+		
+		if (empty($tripName) === true) {
+			$tripName = 'Fun in the sun!';	
+		}
+		
+		if (preg_match('/[^a-zA-Z\d\s-_!]/', $tripName) === 1) {
 			$this->respond(array(), 400, 'Your trip name contains invalid characters.');
 		}
 		
@@ -44,22 +49,24 @@ class TripsController extends BaseController
 	/**
 	 * Renames a trip
 	 *
-	 * @param  integer $tripId   The trip id
-	 * @param  string  $tripName The new trip name
+	 * @param  integer $tripId The trip id
 	 * @return void
 	 */
-	public function edit($tripId, $tripName)
+	public function edit($tripId)
 	{
 		/* @var $trip \App\Models\Trip */
 		$trip = $this->_tripsRepo->getById($tripId);
+		$name = Input::get('name');
 		$data = array();
 		
 		if (empty($trip) === true) {
 			$this->respond($data, 400, 'Invalid trip selected');
 		}
 		
-		$trip->name = $tripName;
-		$trip->save();
+		if (empty($name) === false) {
+			$trip->name = $name;
+			$trip->save();
+		}
 		
 		$this->respond($trip);
 	}

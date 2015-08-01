@@ -22,8 +22,9 @@ ___
 
 | Param Name | Description          |
 | ------------- | ----------- |
-| `trip_name`      | (Optional) The trips name.|
-**Example:** `curl -i -X POST <REST SERVICE IP>:8080/trips/My cool new trip?pretty`<br />
+| `name`      | (Optional) The new trips name.|
+**Example:** `curl -i -X POST '<REST SERVICE IP>:8080/trips?pretty' -d 'name=Im making a trip!'`<br />
+
 ___
 
 #### Rename a trip<br />
@@ -32,8 +33,8 @@ ___
 | Param Name | Description          |
 | ------------- | ----------- |
 | `trip_id`      | is the trip's id.|
-| `trip_name`      | The trip's new name.|
-**Example:** `curl -i -X PUT <REST SERVICE IP>:8080/trips/1/i want this name?pretty`<br />
+| `trip_name`      | The trip's new name. (Passed as a get param)|
+**Example:** `curl -i -X PUT '<REST SERVICE IP>:8080/trips/1?pretty' -d 'name=My Cool New Name'`<br />
 ___
 
 #### Delete a flight for a trip<br />
@@ -43,7 +44,7 @@ ___
 | ------------- | ----------- |                                              
 | `trip_id`      | is the trip's id.|
 | `flight_id`      | is the flight id associate to the trip.|
-**Example:** `curl -i -X DELETE <REST SERVICE IP>:8080/trips/1/flight/1?pretty`<br />
+**Example:** `curl -i -X DELETE <REST SERVICE IP>:8080/trips/1/flights/1?pretty`<br />
 ___
 
 #### Add a flight to a trip<br />
@@ -54,7 +55,7 @@ ___
 | `trip_id`      | is the trip's id.|
 | `origin_id`      | is the origin airport id.|
 | `destination_id`      | is the destination airport id.|
-**Example:** `curl -i -X POST <REST SERVICE IP>:8080/trips/1/flight/6/5?pretty`<br />
+**Example:** `curl -i -X POST <REST SERVICE IP>:8080/trips/1/flights/6/5?pretty`<br />
 ___
 
 #### Delete a trip (and associated flights)<br />
@@ -73,7 +74,7 @@ From your terminal, execute the following commands:
 1. `git clone https://github.com/aviaialon/FlightHubTripBuilderApi.git`
 2. `cd FlightHubTripBuilderApi`
 3. `composer install`
-4. edit **/FlightHubTripBuilderApi/app/config/database.php** to add the database connection info.
+4. edit `/app/config/database.php` to add the database connection info.
 5. `php artisan migrate`
 6. `php artisan db:seed`
 7. `php artisan serve --port 8080`

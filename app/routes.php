@@ -13,10 +13,9 @@
 
 Route::get('/airports/list', 'AirportsController@all');
 Route::get('/trips/{id}/flights', 'FlightsController@flights')->where(array('id' => '[0-9]+'));
-Route::post('/trips/{name?}', 'TripsController@create');
-Route::put('/trips/{id}/{name}', 'TripsController@edit')->where(array(
-	'id' 	=> '[0-9]+',
-	'name'	=> '[\w\s-]{1,255}'
+Route::post('/trips', 'TripsController@create');
+Route::put('/trips/{id}', 'TripsController@edit')->where(array(
+	'id' 	=> '[0-9]+'
 ));
 Route::delete('/trips/{id}/flights/{flightId}', 'FlightsController@delete')->where(array(
 	'id' 	   => '[0-9]+',
