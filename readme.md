@@ -6,6 +6,7 @@ A simple RESTFul API to manage trips
 
 > **GET** `/airports/list`<br />
 **Example:** `curl -i -X GET <REST SERVICE IP>:8080/airports/list?pretty`<br />
+___
 
 #### List all flights associated to a trip:<br />
 > **GET** `/trips/{trip_id}/flights`<br />
@@ -14,6 +15,7 @@ A simple RESTFul API to manage trips
 | ------------- | ----------- |
 | `trip_id`      | is the trip's id.|
 **Example:** `curl -i -X GET <REST SERVICE IP>:8080/trips/1/flights?pretty`<br />
+___
 
 #### Create a new trip<br />
 > **POST** `/trips/{trip_name}`<br />
@@ -22,6 +24,7 @@ A simple RESTFul API to manage trips
 | ------------- | ----------- |
 | `trip_name`      | (Optional) The trips name.|
 **Example:** `curl -i -X POST <REST SERVICE IP>:8080/trips/My cool new trip?pretty`<br />
+___
 
 #### Rename a trip<br />
 > **PUT** `/trips/{trip_id}/{trip_name}`<br />
@@ -31,6 +34,7 @@ A simple RESTFul API to manage trips
 | `trip_id`      | is the trip's id.|
 | `trip_name`      | The trip's new name.|
 **Example:** `curl -i -X PUT <REST SERVICE IP>:8080/trips/1/i want this name?pretty`<br />
+___
 
 #### Delete a flight for a trip<br />
 > **DELETE** `/trips/{trip_id}/flight/{flight_id}`<br />
@@ -40,6 +44,7 @@ A simple RESTFul API to manage trips
 | `trip_id`      | is the trip's id.|
 | `flight_id`      | is the flight id associate to the trip.|
 **Example:** `curl -i -X DELETE <REST SERVICE IP>:8080/trips/1/flight/1?pretty`<br />
+___
 
 #### Add a flight to a trip<br />
 > **POST** `/trips/{trip_id}/flights/{origin_id}/{destination_id}`<br />
@@ -50,6 +55,7 @@ A simple RESTFul API to manage trips
 | `origin_id`      | is the origin airport id.|
 | `destination_id`      | is the destination airport id.|
 **Example:** `curl -i -X POST <REST SERVICE IP>:8080/trips/1/flight/6/5?pretty`<br />
+___
 
 #### Delete a trip (and associated flights)<br />
 > **DELETE** `/trips/{trip_id}`<br />
