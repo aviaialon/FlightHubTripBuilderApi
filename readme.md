@@ -18,7 +18,7 @@ ___
 ___
 
 #### Create a new trip<br />
-> **POST** `/trips/{trip_name}`<br />
+> **POST** `/trips?name={name}`<br />
 
 | Param Name | Description          |
 | ------------- | ----------- |
@@ -28,12 +28,12 @@ ___
 ___
 
 #### Rename a trip<br />
-> **PUT** `/trips/{trip_id}/{trip_name}`<br />
+> **PUT** `/trips/{trip_id}/?name={name}`<br />
 
 | Param Name | Description          |
 | ------------- | ----------- |
 | `trip_id`      | is the trip's id.|
-| `trip_name`      | The trip's new name. (Passed as a get param)|
+| `name`      | The trip's new name.|
 **Example:** `curl -i -X PUT '<REST SERVICE IP>:8080/trips/1?pretty' -d 'name=My Cool New Name'`<br />
 ___
 
