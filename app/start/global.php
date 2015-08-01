@@ -49,11 +49,18 @@ Log::useFiles(storage_path().'/logs/laravel.log');
 App::error(function(Exception $exception, $code)
 {
 	Log::error($exception);
-	return Response::make(array(
+	
+	// FIXME: Fix this.. stop repeating yourself
+	$pretty = 0;
+	if (true === isset($_GET['pretty'])) {
+		$pretty = JSON_PRETTY_PRINT;
+	}
+	
+	return Response::json(array(
 			'status'  => 500,
 			'error'   => true,
 			'message' => 'We are curently experiencing technical difficulties. Please try again soon.'
-	), 500);
+	), 500, array(), $pretty);
 });
 
 /*
@@ -77,11 +84,17 @@ App::down(function()
  */
 App::missing(function($exception)
 {
-	return Response::make(array(
+	// FIXME: Fix this.. stop repeating yourself
+	$pretty = 0;
+	if (true === isset($_GET['pretty'])) {
+		$pretty = JSON_PRETTY_PRINT;
+	}
+	
+	return Response::json(array(
 		'status'  => 404,
 		'error'   => true,
 		'message' => 'Not Found.'
-	), 404);
+	), 404, array(), $pretty);
 });
 
 /*
