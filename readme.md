@@ -5,13 +5,13 @@ A simple RESTFul API built with Laravel to manage trips
 #### List all airports (Ordered alphabeticaly by city and name):<br />
 
 > **GET** `/airports/list`<br />
-**Example:** `curl -i -X GET <REST SERVICE IP>:8080/airports/list?pretty`<br />
+**Example:** `curl -i -X GET '<REST SERVICE IP>:8080/airports/list?pretty'`<br />
 ___
 
 
 #### List all available trips<br />
-> **GET** `/tripslist`<br />
-**Example:** `curl -i -X GET '<REST SERVICE IP>:8080/trips/list?pretty'<br />
+> **GET** `/trips/list`<br />
+**Example:** `curl -i -X GET '<REST SERVICE IP>:8080/trips/list?pretty'`<br />
 
 ___
 
