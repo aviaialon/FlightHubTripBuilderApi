@@ -2,43 +2,43 @@
 A simple RESTFul API to manage trips
 
 ## RESTful URLs
-### List all airports (Ordered alphabeticaly by city and name):
-**GET** `/airports/list`
-**Example:** `curl -i -X GET <REST SERVICE IP>:8080/airports/list`
+### List all airports (Ordered alphabeticaly by city and name):<br />
+**GET** `/airports/list`<br />
+**Example:** `curl -i -X GET <REST SERVICE IP>:8080/airports/list`<br />
 
-### List all flights associated to a trip:
-**GET** `/trips/{trip_id}/flights`
-**{trip_id}** is the trip's primary key
-**Example:** `curl -i -X GET <REST SERVICE IP>:8080/trips/1/flights`
+### List all flights associated to a trip:<br />
+**GET** `/trips/{trip_id}/flights`<br />
+**{trip_id}** is the trip's primary key<br />
+**Example:** `curl -i -X GET <REST SERVICE IP>:8080/trips/1/flights`<br />
 
-### Create a new trip
-**POST** `/trips/{trip_name}`
-**{trip_name}** (Optional) The trips name
-**Example:** `curl -i -X POST <REST SERVICE IP>:8080/trips/My cool new trip`
+### Create a new trip<br />
+**POST** `/trips/{trip_name}`<br />
+**{trip_name}** (Optional) The trips name<br />
+**Example:** `curl -i -X POST <REST SERVICE IP>:8080/trips/My cool new trip`<br />
 
-### Rename a trip
-**PUT** `/trips/{trip_id}/{trip_name}`
-**{trip_id}** is the trip's primary key
-**{trip_name}** is the trip's new name
-**Example:** `curl -i -X PUT <REST SERVICE IP>:8080/trips/1/i want this name`
+### Rename a trip<br />
+**PUT** `/trips/{trip_id}/{trip_name}`<br />
+**{trip_id}** is the trip's primary key<br />
+**{trip_name}** is the trip's new name<br />
+**Example:** `curl -i -X PUT <REST SERVICE IP>:8080/trips/1/i want this name`<br />
 
-### Delete a flight for a trip
-**DELETE** `/trips/{trip_id}/flight/{flight_id}`
-**{trip_id}** is the trip's primary key
-**{flight_id}** is the flight id associate to the trip
-**Example:** `curl -i -X DELETE <REST SERVICE IP>:8080/trips/1/flight/1`
+### Delete a flight for a trip<br />
+**DELETE** `/trips/{trip_id}/flight/{flight_id}`<br />
+**{trip_id}** is the trip's primary key<br />
+**{flight_id}** is the flight id associate to the trip<br />
+**Example:** `curl -i -X DELETE <REST SERVICE IP>:8080/trips/1/flight/1`<br />
 
-### Add a flight to a trip
-**POST** `/trips/{trip_id}/flights/{origin_id}/{destination_id}`
-**{trip_id}** is the trip's primary key
-**{origin_id}** is the origin airport id
-**{destination_id}** is the destination airport id
-**Example:** `curl -i -X POST <REST SERVICE IP>:8080/trips/1/flight/6/5`
+### Add a flight to a trip<br />
+**POST** `/trips/{trip_id}/flights/{origin_id}/{destination_id}`<br />
+**{trip_id}** is the trip's primary key<br />
+**{origin_id}** is the origin airport id<br />
+**{destination_id}** is the destination airport id<br />
+**Example:** `curl -i -X POST <REST SERVICE IP>:8080/trips/1/flight/6/5`<br />
 
-### Delete a trip (and associated flights)
-**DELETE** `/trips/{trip_id}`
-**{trip_id}** The trip id
-**Example:** `curl -i -X DELETE <REST SERVICE IP>:8080/trips/1`
+### Delete a trip (and associated flights)<br />
+**DELETE** `/trips/{trip_id}`<br />
+**{trip_id}** The trip id <br />
+**Example:** `curl -i -X DELETE <REST SERVICE IP>:8080/trips/1`<br />
 
 
 ### Installation
