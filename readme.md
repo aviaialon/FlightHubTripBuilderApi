@@ -1,5 +1,5 @@
 ## Synopsis
-A simple RESTFul API to manage trips
+A simple RESTFul API built with Laravel to manage trips
 
 ## RESTful URLs
 #### List all airports (Ordered alphabeticaly by city and name):<br />
