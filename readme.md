@@ -2,7 +2,7 @@
 A simple RESTFul API built with Laravel to manage trips
 
 ## RESTful URLs
-#### List all airports (Ordered alphabeticaly by city and name):<br />
+#### List all airports (Ordered alphabetically by city and name):<br />
 
 > **GET** `/airports/list`<br />
 **Example:** `curl -i -X GET '<REST SERVICE IP>:8080/airports/list?pretty'`<br />
